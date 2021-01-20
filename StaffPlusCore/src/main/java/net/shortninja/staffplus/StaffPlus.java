@@ -24,6 +24,8 @@ import net.shortninja.staffplus.server.compatibility.v1_14_R2.Protocol_v1_14_R2;
 import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_15_R1;
 import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R1;
 import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R2;
+import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R3;
+import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R4;
 import net.shortninja.staffplus.server.compatibility.v1_7_R1.Protocol_v1_7_R1;
 import net.shortninja.staffplus.server.compatibility.v1_7_R2.Protocol_v1_7_R2;
 import net.shortninja.staffplus.server.compatibility.v1_7_R3.Protocol_v1_7_R3;
@@ -279,7 +281,6 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
             case "v1_14_R1":
                 String[] tmp = Bukkit.getServer().getVersion().split("MC: ");
                 String ver = tmp[tmp.length - 1].substring(0, 6);
-                System.out.println(ver);
                 if(ver.equals("1.14.3")||ver.equals("1.14.4"))
                     versionProtocol = new Protocol_v1_14_R2(this);
                 else
@@ -289,10 +290,18 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
                 versionProtocol = new Protocol_v1_15_R1(this);
                 break;
             case "v1_16_R1":
-                versionProtocol = new Protocol_v1_16_R1(this);
+                tmp = Bukkit.getServer().getVersion().split("MC: ");
+                ver = tmp[tmp.length - 1].substring(0, 6);
+                if(ver.equals("1.16.5"))
+                    versionProtocol = new Protocol_v1_16_R4(this);
+                else
+                    versionProtocol = new Protocol_v1_16_R1(this);
                 break;
             case "v1_16_R2":
                 versionProtocol = new Protocol_v1_16_R2(this);
+                break;
+            case "v1_16_R3":
+                versionProtocol = new Protocol_v1_16_R3(this);
                 break;
 
         }
