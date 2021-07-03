@@ -21,11 +21,7 @@ import net.shortninja.staffplus.server.compatibility.v1_13_R1.Protocol_v1_13_R1;
 import net.shortninja.staffplus.server.compatibility.v1_13_R2.Protocol_v1_13_R2;
 import net.shortninja.staffplus.server.compatibility.v1_14_R1.Protocol_v1_14_R1;
 import net.shortninja.staffplus.server.compatibility.v1_14_R2.Protocol_v1_14_R2;
-import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_15_R1;
-import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R1;
-import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R2;
-import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R3;
-import net.shortninja.staffplus.server.compatibility.v1_1x.Protocol_v1_16_R4;
+import net.shortninja.staffplus.server.compatibility.v1_1x.*;
 import net.shortninja.staffplus.server.compatibility.v1_7_R1.Protocol_v1_7_R1;
 import net.shortninja.staffplus.server.compatibility.v1_7_R2.Protocol_v1_7_R2;
 import net.shortninja.staffplus.server.compatibility.v1_7_R3.Protocol_v1_7_R3;
@@ -65,8 +61,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.inventivetalent.apihelper.APIManager;
-import org.inventivetalent.packetlistener.PacketListenerAPI;
+/*import org.inventivetalent.apihelper.APIManager;
+import org.inventivetalent.packetlistener.PacketListenerAPI;*/
 import org.inventivetalent.update.spiget.SpigetUpdate;
 import org.inventivetalent.update.spiget.UpdateCallback;
 import org.inventivetalent.update.spiget.comparator.VersionComparator;
@@ -122,7 +118,6 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
 
     @Override
     public void onLoad() {
-        APIManager.require(PacketListenerAPI.class, this);
 
         Bukkit.getLogger().setFilter(new PasswordFilter()); // FIXME
 
@@ -141,7 +136,6 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
         permission = new PermissionHandler(this);
         message = new MessageCoordinator(this);
         options = new Options();
-        APIManager.initAPI(PacketListenerAPI.class);
         start(System.currentTimeMillis());
         if (options.storageType.equalsIgnoreCase("mysql")) {
             storage = new MySQLStorage(new MySQLConnection());
@@ -203,7 +197,7 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
         languageFile = new LanguageFile();
         messages = new Messages();
         userManager = new UserManager(this);
-        securityHandler = new SecurityHandler(); // FIXME
+        //securityHandler = new SecurityHandler(); // FIXME
         hookHandler = new HookHandler();
         cpsHandler = new CpsHandler();
         freezeHandler = new FreezeHandler();
@@ -303,7 +297,8 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
             case "v1_16_R3":
                 versionProtocol = new Protocol_v1_16_R3(this);
                 break;
-
+            case "v1_17_R1":
+                versionProtocol = new Protocol_v1_17_R1(this);
         }
 
         if (versionProtocol != null) {
@@ -379,7 +374,6 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
 
         saveUsers();
         tasks.cancel();
-        APIManager.disableAPI(PacketListenerAPI.class);
 
         for (Player player : Bukkit.getOnlinePlayers()) {
             modeCoordinator.removeMode(player);
@@ -394,7 +388,7 @@ public class StaffPlus extends JavaPlugin implements IStaffPlus {
         options = null;
         languageFile = null;
         userManager = null;
-        securityHandler = null; // FIXME
+        //securityHandler = null; // FIXME
         cpsHandler = null;
         freezeHandler = null;
         gadgetHandler = null;

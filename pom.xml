@@ -8,7 +8,7 @@
     <description>The ultimate moderation plugin.</description>
     <artifactId>StaffPlus</artifactId>
     <packaging>pom</packaging>
-    <version>3.3.4.0</version>
+    <version>3.3.6.0-RELEASE</version>
 
     <modules>
         <module>StaffPlusAPI</module>
@@ -35,6 +35,7 @@
 		<module>v1_16_R2</module>
         <module>v1_16_R3</module>
         <module>v1_16_R4</module>
+		<module>v1_17_R1</module>
     </modules>
 
     <build>
@@ -54,9 +55,9 @@
     </build>
 
     <properties>
-        <bukkit.version>1.16.2-R0.1-SNAPSHOT</bukkit.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <bukkit.version>1.17-R0.1-SNAPSHOT</bukkit.version>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
     </properties>
 
     <repositories>
@@ -77,10 +78,10 @@
             <id>mikeprim-repo</id>
             <url>http://repo.mikeprimm.com/</url>
         </repository>
-        <repository>
+        <!--<repository>
             <id>Qballs-repo</id>
             <url>https://repo.qballl.net</url>
-        </repository>
+        </repository>-->
         <repository>
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
