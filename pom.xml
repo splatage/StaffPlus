@@ -55,9 +55,9 @@
     </build>
 
     <properties>
-        <bukkit.version>1.17-R0.1-SNAPSHOT</bukkit.version>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <bukkit.version>1.16.5-R0.1-SNAPSHOT</bukkit.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <repositories>
