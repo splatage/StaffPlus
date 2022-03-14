@@ -5,7 +5,7 @@
     <parent>
         <artifactId>StaffPlus</artifactId>
         <groupId>net.shortninja.staffplus</groupId>
-        <version>3.3.8.1</version>
+        <version>3.3.9.1</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -86,7 +86,7 @@
         <dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>StaffPlusAPI</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
         </dependency>
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
@@ -179,28 +179,28 @@
 		<dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>v1_16_R1</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
             <scope>compile</scope>
         </dependency>
 		
 		<dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>v1_16_R2</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>v1_16_R4</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
             <scope>compile</scope>
         </dependency>
 
         <dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>v1_17_R1</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
             <scope>compile</scope>
             <classifier>remapped-spigot</classifier>
         </dependency>
@@ -315,24 +315,54 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.16-R0.5-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.16-R0.5-SNAPSHOT</version>
+            <type>javadoc</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>v1_16_R3</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>v1_16_R3</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>net.shortninja.staffplus</groupId>
             <artifactId>v1_18_R1</artifactId>
-            <version>3.3.8.1</version>
+            <version>3.3.9.1</version>
             <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>net.shortninja.staffplus</groupId>
+            <artifactId>v1_18_R1</artifactId>
+            <version>3.3.9.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.shortninja.staffplus</groupId>
+            <artifactId>v1_18_R2</artifactId>
+            <version>3.3.9.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.shortninja.staffplus</groupId>
+            <artifactId>StaffPlusBungee</artifactId>
+            <version>3.3.9.1</version>
+        </dependency>
     </dependencies>
 
     <properties>
